@@ -2,7 +2,7 @@ package br.com.myfirstcrud.model;
 
 import java.util.Date;
 
-public class Games {
+public class Soulsborne {
     private int id;
     private String title;
     private Date releaseYear;
