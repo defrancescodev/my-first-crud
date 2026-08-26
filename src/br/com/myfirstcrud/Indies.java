@@ -6,7 +6,7 @@ public class Indies {
     private String developer;
     private int release_year;
     private boolean solo_developer;
-    private String artstyle;
+    private String art_style;
     private double price;
 
     public String getDeveloper() {
@@ -49,12 +49,12 @@ public class Indies {
         this.solo_developer = solo_developer;
     }
 
-    public String getArtstyle() {
-        return artstyle;
+    public String getArt_style() {
+        return art_style;
     }
 
-    public void setArtstyle(String artstyle) {
-        this.artstyle = artstyle;
+    public void setArt_style(String art_style) {
+        this.art_style = art_style;
     }
 
     public double getPrice() {

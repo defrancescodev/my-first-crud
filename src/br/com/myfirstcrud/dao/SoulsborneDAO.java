@@ -13,7 +13,7 @@ import java.util.List;
 public class SoulsborneDAO {
 
     public void save(Soulsborne soulsborne) {
-        String sql = "INSERT INTO soulsborne(title, price,developer, release_year, own_parry_mechanic, visual_thema) VALUES (?,?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO soulsborne(title, price,  developer, release_year, own_parry_mechanic, visual_thema) VALUES (?,?, ?, ?, ?, ?)";
 
         Connection con = null;
         PreparedStatement pstm = null;
