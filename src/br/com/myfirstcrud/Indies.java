@@ -5,6 +5,7 @@ public class Indies {
     private String title;
     private String developer;
     private int release_year;
+    private boolean solo_developer;
     private String artstyle;
     private double price;
 
@@ -38,6 +39,14 @@ public class Indies {
 
     public void setRelease_year(int release_year) {
         this.release_year = release_year;
+    }
+
+    public boolean getSolo_developer() {
+        return solo_developer;
+    }
+
+    public void setSolo_developer(boolean solo_developer) {
+        this.solo_developer = solo_developer;
     }
 
     public String getArtstyle() {

@@ -1,5 +1,6 @@
 package br.com.myfirstcrud.main;
 
+import br.com.myfirstcrud.Indies;
 import br.com.myfirstcrud.dao.SoulsborneDAO;
 import br.com.myfirstcrud.model.Soulsborne;
 
@@ -7,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         SoulsborneDAO soulsborneDAO = new SoulsborneDAO();
         Soulsborne soulsborne1 = new Soulsborne();
+
 
         soulsborne1.setTitle("Dark Souls Remastered");
         soulsborne1.setPrice(154.90);
@@ -16,6 +18,14 @@ public class Main {
         soulsborne1.setVisual_thema("Ruined World");
 
         soulsborneDAO.save(soulsborne1);
+
+        Indies indies1 = new Indies();
+        indies1.setTitle("Hollow Knight");
+        indies1.setPrice(46.99);
+        indies1.setDeveloper("TeamCherry");
+
+
+
 
 
        for (Soulsborne soulsborne : soulsborneDAO.getSoulsbornes()) {
