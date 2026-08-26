@@ -8,14 +8,15 @@ public class Main {
         SoulsborneDAO soulsborneDAO = new SoulsborneDAO();
         Soulsborne soulsborne1 = new Soulsborne();
 
-        //soulsborne1.setId(3);
-        //soulsborne1.setTitle("Dark Souls 3");
-        //soulsborne1.setDeveloper("FromSoftware");
-        //soulsborne1.setRelease_year(2016);
-        //soulsborne1.setOwn_parry_mechanic(true);
-        //soulsborne1.setVisual_thema("Ruined World");
+        soulsborne1.setTitle("Dark Souls Remastered");
+        soulsborne1.setPrice(154.90);
+        soulsborne1.setDeveloper("FromSoftware");
+        soulsborne1.setRelease_year(2011);
+        soulsborne1.setOwn_parry_mechanic(true);
+        soulsborne1.setVisual_thema("Ruined World");
 
-        //soulsborneDAO.save(soulsborne);
+        soulsborneDAO.save(soulsborne1);
+
 
        for (Soulsborne soulsborne : soulsborneDAO.getSoulsbornes()) {
            System.out.println(soulsborne.getTitle());

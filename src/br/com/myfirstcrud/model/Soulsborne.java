@@ -3,6 +3,7 @@ package br.com.myfirstcrud.model;
 public class Soulsborne {
     private int id;
     private String title;
+    private double price;
     private String developer;
     private int release_year;
     private boolean own_parry_mechanic;
@@ -11,6 +12,8 @@ public class Soulsborne {
     public int getId() {
         return id;
     }
+
+
 
     public void setId(int id) {
         this.id = id;
@@ -22,6 +25,14 @@ public class Soulsborne {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getDeveloper() {
