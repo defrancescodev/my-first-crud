@@ -15,7 +15,7 @@ public class ConnectionFactory {
      * Conexão com o banco de dados
      */
 
-    public static Connection connection() throws ClassNotFoundException, SQLException {
+    public static Connection createConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver"); //Faz com que a classe seja carregada pela JVM
 
         return DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
@@ -23,7 +23,7 @@ public class ConnectionFactory {
 
     public static void main(String[] args) {
         try {
-            Connection connection = connection();
+            Connection connection = createConnection();
 
             if (connection != null) {
                 System.out.println("Conexão obetida com sucesso");

@@ -1,14 +1,14 @@
 package br.com.myfirstcrud.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Soulsborne {
     private int id;
     private String title;
-    private Date releaseYear;
+    private java.util.Date release_year;
     private String developer;
-    private boolean ownParryMechanic;
-    private String VisualThemaic;
+    private boolean own_parry_echanic;
+    private String visual_themaic;
 
     public int getId() {
         return id;
@@ -26,12 +26,28 @@ public class Soulsborne {
         this.title = title;
     }
 
-    public Date getReleaseYear() {
-        return releaseYear;
+    public java.util.Date getRelease_year() {
+        return release_year;
     }
 
-    public void setReleaseYear(Date releaseYear) {
-        this.releaseYear = releaseYear;
+    public void setRelease_year(java.sql.Date release_year) {
+        this.release_year = release_year;
+    }
+
+    public boolean isOwn_parry_echanic() {
+        return own_parry_echanic;
+    }
+
+    public void setOwn_parry_echanic(boolean own_parry_echanic) {
+        this.own_parry_echanic = own_parry_echanic;
+    }
+
+    public String getVisual_themaic() {
+        return visual_themaic;
+    }
+
+    public void setVisual_themaic(String visual_themaic) {
+        this.visual_themaic = visual_themaic;
     }
 
     public String getDeveloper() {
@@ -43,18 +59,18 @@ public class Soulsborne {
     }
 
     public boolean isOwnParryMechanic() {
-        return ownParryMechanic;
+        return own_parry_echanic;
     }
 
     public void setOwnParryMechanic(boolean ownParryMechanic) {
-        this.ownParryMechanic = ownParryMechanic;
+        this.own_parry_echanic = ownParryMechanic;
     }
 
-    public String getVisualThemaic() {
-        return VisualThemaic;
+    public String getVisual_hemaic() {
+        return visual_themaic;
     }
 
-    public void setVisualThemaic(String visualThemaic) {
-        VisualThemaic = visualThemaic;
+    public void setVisual_hemaic(String visual_hemaic) {
+        this.visual_themaic = visual_hemaic;
     }
 }
