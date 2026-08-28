@@ -60,8 +60,8 @@ public class SoulsborneDAO {
             while (rset.next()) {
                 Soulsborne soulsborne = new Soulsborne();
                 soulsborne.setId(rset.getInt("id"));
-                soulsborne.setPrice(rset.getDouble("price"));
                 soulsborne.setTitle(rset.getString("title"));
+                soulsborne.setPrice(rset.getDouble("price"));
                 soulsborne.setDeveloper(rset.getString("developer"));
                 soulsborne.setRelease_year(rset.getInt("release_year"));
                 soulsborne.setOwn_parry_mechanic(rset.getBoolean("own_parry_mechanic"));
@@ -93,6 +93,48 @@ public class SoulsborneDAO {
         }
 
         return soulsbornes;
+    }
+
+    public void updateSoulsborne(Soulsborne soulsborne) {
+        String sql = "UPDATE soulsborne SET title = ?, price = ?, developer = ?, release_year = ?, own_parry_mechanic = ?, visual_thema = ?  WHERE id = ? ";
+
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            con = ConnectionFactory.createConnection();
+            preparedStatement = (PreparedStatement) con.prepareStatement(sql);
+
+            //Adicionar os valores para atualizar
+            preparedStatement.setString(1, soulsborne.getTitle());
+            preparedStatement.setDouble(2, soulsborne.getPrice());
+            preparedStatement.setString(3, soulsborne.getDeveloper());
+            preparedStatement.setInt(4, soulsborne.getRelease_year());
+            preparedStatement.setBoolean(5, soulsborne.isOwn_parry_mechanic());
+            preparedStatement.setString(6, soulsborne.getVisual_thema());
+
+            //Qual ID do registro que deseja atualizar
+            preparedStatement.setInt(7, soulsborne.getId());
+
+
+            preparedStatement.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
