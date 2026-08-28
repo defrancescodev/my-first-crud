@@ -1,6 +1,6 @@
 package br.com.myfirstcrud.dao;
 
-import br.com.myfirstcrud.Indies;
+import br.com.myfirstcrud.model.Indies;
 import br.com.myfirstcrud.factory.ConnectionFactory;
 
 import java.sql.Connection;

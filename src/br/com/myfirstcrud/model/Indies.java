@@ -1,4 +1,4 @@
-package br.com.myfirstcrud;
+package br.com.myfirstcrud.model;
 
 public class Indies {
     private int id;

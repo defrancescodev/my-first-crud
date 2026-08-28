@@ -1,6 +1,6 @@
 package br.com.myfirstcrud.main;
 
-import br.com.myfirstcrud.Indies;
+import br.com.myfirstcrud.model.Indies;
 import br.com.myfirstcrud.dao.IndiesDAO;
 import br.com.myfirstcrud.dao.SoulsborneDAO;
 import br.com.myfirstcrud.model.Soulsborne;
