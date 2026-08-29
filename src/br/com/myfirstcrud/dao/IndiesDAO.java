@@ -96,4 +96,37 @@ public class IndiesDAO {
 
         return indiesList;
     }
+
+    public void updateIndies(Indies indies) {
+        String sql = "UPDATE resident_evil SET title = ?, price = ?, developer = ?, release_year = ?, solo_developer = ?, art_style = ? WHERE id = ?";
+        Connection connection = null;
+        PreparedStatement pstm = null;
+
+        try {
+            connection = ConnectionFactory.createConnection();
+            pstm = (PreparedStatement) connection.prepareStatement(sql);
+            pstm.setString(1, indies.getTitle());
+            pstm.setDouble(2, indies.getPrice());
+            pstm.setString(3, indies.getDeveloper());
+            pstm.setInt(4, indies.getRelease_year());
+            pstm.setBoolean(5, indies.getSolo_developer());
+            pstm.setString(6, indies.getArt_style());
+            pstm.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+
+                if (pstm != null) {
+                    pstm.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

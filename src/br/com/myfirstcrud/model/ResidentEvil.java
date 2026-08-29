@@ -6,7 +6,8 @@ public class ResidentEvil {
     private double price;
     private String developer;
     private int release_year;
-    private String protagonist;
+    private String main_character;
+
 
     public int getId() {
         return id;
@@ -48,11 +49,11 @@ public class ResidentEvil {
         this.release_year = release_year;
     }
 
-    public String getProtagonist() {
-        return protagonist;
+    public String getMain_character() {
+        return main_character;
     }
 
-    public void setProtagonist(String protagonist) {
-        this.protagonist = protagonist;
+    public void setMain_characte(String main_character) {
+        this.main_character = main_character;
     }
 }

@@ -16,6 +16,18 @@ public class Main {
         Indies indies1 = new Indies();
         IndiesDAO indiesDAO = new IndiesDAO();
 
+        soulsborne1.setId(4);
+        soulsborne1.setTitle("Elden Ring");
+        soulsborne1.setPrice(274.50);
+        soulsborne1.setDeveloper("FromSoftware");
+        soulsborne1.setRelease_year(2022);
+        soulsborne1.setOwn_parry_mechanic(true);
+        soulsborne1.setVisual_thema("Dark Fantasy");
+        soulsborne1.setId(12); //Número que está no banco de dados
+
+        soulsborneDAO.updateSoulsborne(soulsborne1);
+
+
 //        System.out.println("Name: ");
 //        soulsborne1.setTitle(input.nextLine());
 //
