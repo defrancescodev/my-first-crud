@@ -9,23 +9,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        SoulsborneDAO soulsborneDAO = new SoulsborneDAO();
-        Soulsborne soulsborne1 = new Soulsborne();
-
-        Indies indies1 = new Indies();
-        IndiesDAO indiesDAO = new IndiesDAO();
-
-        soulsborne1.setId(4);
-        soulsborne1.setTitle("Elden Ring");
-        soulsborne1.setPrice(274.50);
-        soulsborne1.setDeveloper("FromSoftware");
-        soulsborne1.setRelease_year(2022);
-        soulsborne1.setOwn_parry_mechanic(true);
-        soulsborne1.setVisual_thema("Dark Fantasy");
-        soulsborne1.setId(12); //Número que está no banco de dados
-
-        soulsborneDAO.updateSoulsborne(soulsborne1);
+//        Scanner input = new Scanner(System.in);
+       SoulsborneDAO soulsborneDAO = new SoulsborneDAO();
+//        Soulsborne soulsborne1 = new Soulsborne();
+//
+//        Indies indies1 = new Indies();
+//        IndiesDAO indiesDAO = new IndiesDAO();
+//
+//        soulsborne1.setId(4);
+//        soulsborne1.setTitle("Elden Ring");
+//        soulsborne1.setPrice(274.50);
+//        soulsborne1.setDeveloper("FromSoftware");
+//        soulsborne1.setRelease_year(2022);
+//        soulsborne1.setOwn_parry_mechanic(true);
+//        soulsborne1.setVisual_thema("Dark Fantasy");
+//        soulsborne1.setId(12); //Número que está no banco de dados
+//
+//        soulsborneDAO.updateSoulsborne(soulsborne1);
 
 
 //        System.out.println("Name: ");
@@ -59,6 +59,8 @@ public class Main {
 //        indies1.setArt_style("hand-drawn 2D art style");
 
         //indiesDAO.save(indies1);
+
+        soulsborneDAO.deleteById(12);
         
        for (Soulsborne soulsborne : soulsborneDAO.getSoulsbornes()) {
            System.out.println(soulsborne.getTitle());
