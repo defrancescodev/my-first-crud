@@ -1,11 +1,13 @@
 package br.com.myfirstcrud.model;
 
-public class FpsGames {
+public abstract class Game {
     private int id;
     private String title;
     private double price;
     private String developer;
-    private String background;
+    private int releaseYear;
+
+
 
     public int getId() {
         return id;
@@ -39,11 +41,11 @@ public class FpsGames {
         this.developer = developer;
     }
 
-    public String getBackground() {
-        return background;
+    public int getReleaseYear() {
+        return releaseYear;
     }
 
-    public void setBackground(String background) {
-        this.background = background;
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
     }
 }
