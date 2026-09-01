@@ -13,6 +13,14 @@ public class Main3 {
         fpsGames1.setPrice(224.90);
         fpsGames1.setDeveloper("Rockstar North");
         fpsGames1.setBackground("Los Santos City;");
-        fpsGamesDAO.saveFps(fpsGames1);
+        //fpsGamesDAO.saveFps(fpsGames1);
+
+        for (FpsGames fpsGames : fpsGamesDAO.getFpsGames()) {
+            System.out.println(fpsGames.getId());
+            System.out.println(fpsGames.getTitle());
+            System.out.println(fpsGames.getPrice());
+            System.out.println(fpsGames.getDeveloper());
+            System.out.println(fpsGames.getBackground());
+        }
     }
 }
