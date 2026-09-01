@@ -1,11 +1,24 @@
 package br.com.myfirstcrud.model;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 public abstract class Game {
     private int id;
     private String title;
     private double price;
     private String developer;
     private int releaseYear;
+
+
+
+    public abstract String saveGame();
+    public abstract String updateGame();
+    public abstract String getTableName();
+
+    public abstract void fillPreparedStatement(PreparedStatement pstm, Boolean isUpdate);
+    public abstract void fillFromResutset(ResultSet rset);
+
 
 
 
