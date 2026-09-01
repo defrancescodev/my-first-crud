@@ -8,12 +8,17 @@ public class Main3 {
         FpsGamesDAO fpsGamesDAO = new FpsGamesDAO();
         FpsGames fpsGames1 = new FpsGames();
 
-        fpsGames1.setId(1);
-        fpsGames1.setTitle("GTA V");
-        fpsGames1.setPrice(224.90);
-        fpsGames1.setDeveloper("Rockstar North");
-        fpsGames1.setBackground("Los Santos City;");
-        //fpsGamesDAO.saveFps(fpsGames1);
+        fpsGames1.setId(3);
+        fpsGames1.setTitle("Call of Duty®: Modern Warfare® 4");
+        fpsGames1.setPrice(299.99);
+        fpsGames1.setDeveloper("Infinity Ward");
+        fpsGames1.setBackground("The Korean War Front");
+        fpsGamesDAO.saveFps(fpsGames1);
+        fpsGamesDAO.updateFpsGame(fpsGames1);
+
+        fpsGamesDAO.deleteById(1);
+        fpsGamesDAO.deleteById(2);
+        fpsGamesDAO.deleteById(3);
 
         for (FpsGames fpsGames : fpsGamesDAO.getFpsGames()) {
             System.out.println(fpsGames.getId());
@@ -21,6 +26,7 @@ public class Main3 {
             System.out.println(fpsGames.getPrice());
             System.out.println(fpsGames.getDeveloper());
             System.out.println(fpsGames.getBackground());
+            System.out.println();
         }
     }
 }

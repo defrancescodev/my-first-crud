@@ -18,7 +18,7 @@ public class FpsGamesDAO {
 
         try {
             con = ConnectionFactory.createConnection();
-            preparedStatement = con.prepareStatement(slq);
+            preparedStatement = (PreparedStatement) con.prepareStatement(slq);
             preparedStatement.setString(1, fpsGames.getTitle());
             preparedStatement.setDouble(2, fpsGames.getPrice());
             preparedStatement.setString(3, fpsGames.getDeveloper());
@@ -54,7 +54,7 @@ public class FpsGamesDAO {
         try {
             FpsGames fpsGames = new FpsGames();
             con = ConnectionFactory.createConnection();
-            pstm = con.prepareStatement(sql);
+            pstm =  (PreparedStatement) con.prepareStatement(sql);
             rset = pstm.executeQuery();
             while (rset.next()) {
                 fpsGames.setId(rset.getInt("id"));
@@ -90,7 +90,64 @@ public class FpsGamesDAO {
 
     }
 
-    public void updateSoulsBorne(Soulsborne soulsborne) {
+    public void updateFpsGame(FpsGames fpsGames) {
+        String sql = "UPDATE fps_games SET title = ?, price = ?, developer = ?, background = ? WHERE id = ?";
+        Connection con = null;
+        PreparedStatement pstm = null;
+
+        try {
+            con = ConnectionFactory.createConnection();
+            pstm = (PreparedStatement) con.prepareStatement(sql);
+            pstm.setString(1, fpsGames.getTitle());
+            pstm.setDouble(2, fpsGames.getPrice());
+            pstm.setString(3, fpsGames.getDeveloper());
+            pstm.setString(4, fpsGames.getBackground());
+            pstm.setInt(5, fpsGames.getId());
+            pstm.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+
+                if (pstm != null) {
+                    pstm.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void deleteById(int id) {
+        String sql = "DELETE FROM fps_games WHERE id = ?";
+        Connection con = null;
+        PreparedStatement pstm = null;
+
+        try {
+            con = ConnectionFactory.createConnection();
+            pstm = (PreparedStatement) con.prepareStatement(sql);
+            pstm.setInt(1, id);
+            pstm.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+
+                if (pstm != null ) {
+                    pstm.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }
