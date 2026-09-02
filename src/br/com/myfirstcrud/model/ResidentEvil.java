@@ -9,7 +9,7 @@ public class ResidentEvil extends Game {
 
     @Override
     public String saveGame() {
-        return "INSERT INTO resident_evil VALUES (title, price, developer, release_year) VALUES (?, ?, ?, ?)";
+        return "INSERT INTO resident_evil VALUES (title, price, developer, release_year, main_character) VALUES (?, ?, ?, ?)";
     }
 
     @Override
