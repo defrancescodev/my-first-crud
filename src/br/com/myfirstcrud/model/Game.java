@@ -8,7 +8,14 @@ public class Game {
     private boolean isSoloDeveloper;
     private String visualThema;
 
-
+    public Game(String name, double price, int releaseYear, String developer, boolean isSoloDeveloper, String visualThema) {
+        this.name = name;
+        this.price = price;
+        this.releaseYear = releaseYear;
+        this.developer = developer;
+        this.isSoloDeveloper = isSoloDeveloper;
+        this.visualThema = visualThema;
+    }
 
     public String getName() {
         return name;
