@@ -1,6 +1,7 @@
 package br.com.myfirstcrud.model;
 
 public class Game {
+    private int id;
     private String name;
     private double price;
     private int releaseYear;
@@ -8,13 +9,26 @@ public class Game {
     private boolean isSoloDeveloper;
     private String visualThema;
 
-    public Game(String name, double price, int releaseYear, String developer, boolean isSoloDeveloper, String visualThema) {
+    public Game() {
+
+    }
+
+    public Game(int id, String name, double price, int releaseYear, String developer, boolean isSoloDeveloper, String visualThema) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.releaseYear = releaseYear;
         this.developer = developer;
         this.isSoloDeveloper = isSoloDeveloper;
         this.visualThema = visualThema;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

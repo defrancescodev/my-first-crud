@@ -6,7 +6,12 @@ import dao.GameDAO;
 public class Main {
     public static void main(String[] args) {
         GameDAO gameDAO = new GameDAO();
-        Game game1 = new Game("Elden Ring", 274.50, 2022, "FromSoftware", false, "Ruined World");
-        gameDAO.save(game1);
+        //Game game1 = new Game(1, "Elden Ring", 274.50, 2022, "FromSoftware", false, "Ruined World");
+        ;
+
+        for (Game game : gameDAO.getGames()) {
+            System.out.println(game.getName());
+        }
+
     }
 }

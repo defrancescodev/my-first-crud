@@ -5,6 +5,9 @@ import factory.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameDAO {
 
@@ -43,5 +46,53 @@ public class GameDAO {
             }
         }
 
+    }
+
+    public List<Game> getGames() {
+        List<Game> gameList = new ArrayList<Game>();
+        String sql = "SELECT * FROM games";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = ConnectionFactory.connection();
+            preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Game game = new Game();
+                game.setId(resultSet.getInt("id"));
+                game.setName(resultSet.getString("title"));
+                game.setPrice(resultSet.getDouble("price"));
+                game.setId(resultSet.getInt("release_year"));
+                game.setDeveloper(resultSet.getString("developer"));
+                game.setSoloDeveloper(resultSet.getBoolean("solo_developer"));
+                game.setVisualThema(resultSet.getString("visual_thema"));
+                gameList.add(game);
+
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return gameList;
     }
 }
