@@ -96,6 +96,42 @@ public class GameDAO {
         return gameList;
     }
 
+    public void updateGame(Game game, int id) {
+        String sql = "UPDATE games SET title = ?, price = ?, release_year = ?, developer = ?, solo_developer = ?, visual_thema = ? WHERE id = ?";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try  {
+            connection = ConnectionFactory.connection();
+            preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, game.getName());
+            preparedStatement.setDouble(3, game.getPrice());
+            preparedStatement.setInt(4, game.getReleaseYear());
+            preparedStatement.setString(5, game.getDeveloper());
+            preparedStatement.setBoolean(6, game.isSoloDeveloper());
+            preparedStatement.setString(7, game.getVisualThema());
+            preparedStatement.execute();
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void deleteById(int id) {
         String sql = "DELETE FROM games WHERE id = ?";
         Connection connection = null;

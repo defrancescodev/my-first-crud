@@ -13,8 +13,8 @@ public class Game {
 
     }
 
-    public Game(int id, String name, double price, int releaseYear, String developer, boolean isSoloDeveloper, String visualThema) {
-        this.id = id;
+    public Game(String name, double price, int releaseYear, String developer, boolean isSoloDeveloper, String visualThema) {
+
         this.name = name;
         this.price = price;
         this.releaseYear = releaseYear;
