@@ -9,6 +9,8 @@ public class Main {
         //Game game1 = new Game(1, "Elden Ring", 274.50, 2022, "FromSoftware", false, "Ruined World");
         ;
 
+        gameDAO.deleteById(1);
+
         for (Game game : gameDAO.getGames()) {
             System.out.println(game.getName());
         }
